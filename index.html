@@ -25,63 +25,46 @@
             cursor: pointer;
             font-weight: bold;
             padding: 10px;
-            background: #e3e3e3;
-            border: 1px solid #ccc;
+            background-color: #003366; /* Dunkelblau */
+            color: white; /* Weiße Schrift */
             border-radius: 5px;
             transition: background 0.3s;
         }
 
         .category:hover {
-            background: #d1d1d1;
+            background-color: #002244; /* Etwas dunkleres Blau für Hover */
         }
 
-        /* Items (Unterkategorien) */
+        /* Tabellarische Inhalte */
         .items {
             display: none;
-            margin-left: 20px;
-            margin-top: 5px;
+            margin-top: 10px;
         }
 
-        .item {
-            margin: 5px 0;
-            padding: 5px 10px;
-            border-left: 4px solid #ccc;
-            background: #fff;
-            border-radius: 3px;
-            transition: border-color 0.3s, background 0.3s;
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            background-color: #fff;
         }
 
-        .item:hover {
-            border-color: #3498db;
-            background: #f0f8ff;
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
         }
 
-        /* Status-Icons */
-        .status {
-            font-weight: bold;
+        th {
+            background-color: #003366;
+            color: white;
         }
 
-        .status.up {
-            color: green;
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
         }
 
-        .status.down {
-            color: red;
-        }
-
-        .status.neutral {
-            color: orange;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 600px) {
-            body {
-                font-size: 16px;
-            }
-
-            .category {
-                font-size: 18px;
-            }
+        tr:hover {
+            background-color: #e6f7ff;
         }
     </style>
 </head>
@@ -107,7 +90,7 @@
             const container = document.getElementById("watchlist");
 
             let currentCategory = null;
-            let itemsContainer = null;
+            let table = null;
 
             data.forEach((row, index) => {
                 if (index < 5 || row[0] === "") return; // Überspringe Header und leere Zeilen
@@ -126,31 +109,37 @@
                         items.style.display = items.style.display === "none" ? "block" : "none";
                     };
 
-                    itemsContainer = document.createElement("div");
+                    table = document.createElement("table");
+                    table.innerHTML = `
+                        <thead>
+                            <tr>
+                                <th>Symbol</th>
+                                <th>Name</th>
+                                <th>Status</th>
+                                <th>Trend</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    `;
+
+                    const itemsContainer = document.createElement("div");
                     itemsContainer.className = "items";
+                    itemsContainer.appendChild(table);
 
                     container.appendChild(categoryElement);
                     container.appendChild(itemsContainer);
                 }
 
-                if (itemsContainer) {
-                    // Einzelnes Item hinzufügen
-                    const itemElement = document.createElement("div");
-                    itemElement.className = "item";
-
-                    // Trend-Status farblich hervorheben
-                    const trendClass = trend.toLowerCase().includes("up")
-                        ? "up"
-                        : trend.toLowerCase().includes("down")
-                        ? "down"
-                        : "neutral";
-
-                    itemElement.innerHTML = `
-                        <span class="symbol">${symbol}</span> - 
-                        <span class="name">${name}</span>
-                        (<span class="status ${trendClass}">${status}, ${trend}</span>)
+                if (table) {
+                    // Zeile zur Tabelle hinzufügen
+                    const rowElement = document.createElement("tr");
+                    rowElement.innerHTML = `
+                        <td>${symbol}</td>
+                        <td>${name}</td>
+                        <td>${status}</td>
+                        <td>${trend}</td>
                     `;
-                    itemsContainer.appendChild(itemElement);
+                    table.querySelector("tbody").appendChild(rowElement);
                 }
             });
         }
