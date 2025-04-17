@@ -1,0 +1,56 @@
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+Kategorie,Symbol,Name,Spotlight,Wert ,Status,Wert Vorwoche,Weekly Trend
+01 US Aktien,SPY,S&P 500,FALSE,1,🔴,1,➖
+01 US Aktien,MDY,S&P 500 Midcap,FALSE,0,🔴 🔴,1,DOWN
+01 US Aktien,QQQ,NASDAQ,FALSE,1,🔴,1,➖
+01 US Aktien,XNGI,NASDAQ Next Gen,FALSE,1,🔴,1,➖
+01 US Aktien,IWD,Russell 1000,FALSE,1,🔴,1,➖
+01 US Aktien,IWM,Russell 2000,FALSE,0,🔴 🔴,0,➖
+02 Europa,DAX,DAX,FALSE,3,🟡,3,➖
+02 Europa,MDAX,MDAX,FALSE,3,🟡,2,UP
+02 Europa,SDXP,SDAX,FALSE,2,🔴,3,DOWN
+02 Europa,SXXP,Eurostoxx 600,FALSE,1,🔴,2,DOWN
+02 Europa,EXSD,Eurostoxx MidCaps,FALSE,1,🔴,2,DOWN
+02 Europa,SWISS,Schweiz,FALSE,1,🔴,2,DOWN
+02 Europa,,UK ,FALSE,1,🔴,1,➖
+03 Emerging Markets,EWJ,Japan,FALSE,0,🔴 🔴,1,DOWN
+03 Emerging Markets,China,China,FALSE,1,🔴,1,➖
+03 Emerging Markets,HSTE,Hong Kong,FALSE,3,🟡,3,➖
+03 Emerging Markets,EWY,Korea,FALSE,0,🔴 🔴,0,➖
+03 Emerging Markets,INDA,Indien,TRUE,1,🔴,1,➖
+03 Emerging Markets,EWS,Singapore,FALSE,2,🔴,3,DOWN
+03 Emerging Markets,F4GAS,ASEAN ,FALSE,1,🔴,1,➖
+03 Emerging Markets,,Argentina,FALSE,3,🟡,2,UP
+03 Emerging Markets,FLXB,Brasilien,FALSE,0,🔴 🔴,2,STRONG DOWN
+04 Rohstoffe,GLD,Gold,TRUE,6,🟢 🟢,6,➖
+04 Rohstoffe,SLV,Silber,TRUE,4,🟡,3,UP
+04 Rohstoffe,PPLT,Platin,FALSE,1,🔴,1,➖
+05 Crypto,NQBTC,Bitcoin,FALSE,2,🔴,2,➖
+05 Crypto,ETHUSD,Ethereum,FALSE,0,🔴 🔴,0,➖
+05 Crypto,NQSOL,Solana,FALSE,1,🔴,1,➖
+05 Crypto,NQADA,Cardano,FALSE,1,🔴,1,➖
+05 Crypto,NQXRP,XRP/RIPPLE,FALSE,2,🔴,3,DOWN
+05 Crypto,AVAXUSD,Avalanche,FALSE,1,🔴,0,UP
+05 Crypto,ZZUC,Crypto Market,FALSE,1,🔴,1,➖
+06 Sektoren Growth,IGV,Software,FALSE,1,🔴,1,➖
+06 Sektoren Growth,IS4S,Cybersecurity,FALSE,1,🔴,0,UP
+06 Sektoren Growth,SOXX,Semiconductor Sector,FALSE,0,🔴 🔴,0,➖
+06 Sektoren Growth,XLC,Communication Sector,FALSE,1,🔴,1,➖
+06 Sektoren Growth,IBUY,Online retail,FALSE,1,🔴,1,➖
+06 Sektoren Growth,XBI,Biotech Sector,FALSE,0,🔴🔴,0,➖
+07 Sektoren Value,XLF,Financial,FALSE,0,🔴 🔴,1,DOWN
+07 Sektoren Value,XLE,Sector Energy,FALSE,0,🔴 🔴,0,➖
+06 Sektoren Growth,IQQH,Clean Energy,FALSE,0,🔴 🔴,0,➖
+07 Sektoren Value,NUKL,Uranium + Nuklear,FALSE,0,🔴 🔴,0,➖
+07 Sektoren Value,XLV,Healthcare,FALSE,0,🔴 🔴,2,STRONG DOWN
+07 Sektoren Value,IHE,Pharmaceutical,FALSE,0,🔴 🔴,1,DOWN
+07 Sektoren Value,IHI,Medical Devices,FALSE,1,🔴,1,➖
+07 Sektoren Value,XLU,Utilities,FALSE,1,🔴,3,STRONG DOWN
+07 Sektoren Value,CBUX,Infrastructure,FALSE,1,🔴,1,➖
+07 Sektoren Value,ITA,Aerospace + Defense,FALSE,2,🔴,3,DOWN
+07 Sektoren Value,IYT,Transportation,FALSE,0,🔴 🔴,0,➖
+07 Sektoren Value,XLP,Consumer Staples,FALSE,2,🔴,4,STRONG DOWN
+07 Sektoren Value,XLY,Consumer Discretionary,FALSE,1,🔴,1,➖
