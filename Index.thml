@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watchlist Übersicht</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .category {
+            margin: 10px 0;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .category:hover {
+            text-decoration: underline;
+        }
+        .items {
+            display: none;
+            margin-left: 20px;
+        }
+        .item {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Watchlist Übersicht</h1>
+    <div id="watchlist"></div>
+
+    <script>
+        // CSV-Datei vom GitHub-Repository laden
+        const csvUrl = "https://raw.githubusercontent.com/JochenSchweden/Markt-bersicht/main/Watchlist%20-%20Watchlist%20(1).csv";
+
+        // Funktion zum Parsen der CSV-Daten
+        async function loadCSV(url) {
+            const response = await fetch(url);
+            const csvText = await response.text();
+            const rows = csvText.split("\n").map(row => row.split(","));
+            return rows;
+        }
+
+        // Daten in die HTML-Seite einfügen
+        async function renderWatchlist() {
+            const data = await loadCSV(csvUrl);
+            const container = document.getElementById("watchlist");
+
+            let currentCategory = null;
+            let itemsContainer = null;
+
+            data.forEach((row, index) => {
+                if (index < 5 || row[0] === "") return; // Überspringe Header und leere Zeilen
+
+                const [category, symbol, name, spotlight, value, status, prevValue, trend] = row;
+
+                if (category && category !== currentCategory) {
+                    currentCategory = category;
+
+                    // Neue Kategorie erstellen
+                    const categoryElement = document.createElement("div");
+                    categoryElement.className = "category";
+                    categoryElement.textContent = category;
+                    categoryElement.onclick = () => {
+                        const items = categoryElement.nextElementSibling;
+                        items.style.display = items.style.display === "none" ? "block" : "none";
+                    };
+
+                    itemsContainer = document.createElement("div");
+                    itemsContainer.className = "items";
+
+                    container.appendChild(categoryElement);
+                    container.appendChild(itemsContainer);
+                }
+
+                if (itemsContainer) {
+                    // Einzelnes Item hinzufügen
+                    const itemElement = document.createElement("div");
+                    itemElement.className = "item";
+                    itemElement.textContent = `${symbol} - ${name} (${status}, ${trend})`;
+                    itemsContainer.appendChild(itemElement);
+                }
+            });
+        }
+
+        renderWatchlist();
+    </script>
+</body>
+</html>
